@@ -39,3 +39,9 @@ exports.deleteManager = (managerId) => {
         where: {_id: managerId}
     });
 };
+
+exports.findByEmail = (email) => {
+    return Manager.findOne({
+        where: {email: email}
+    });
+};

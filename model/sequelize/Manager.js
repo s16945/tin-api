@@ -30,6 +30,10 @@ const Manager = sequelize.define('Manager', {
         type: Sequelize.DATE,
         allowNull: false,
         unique: false
+    },
+    password: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 });
 
