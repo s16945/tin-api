@@ -16,10 +16,6 @@ const Transfer = sequelize.define('Transfer', {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    currentClub: {
-        type: Sequelize.STRING,
-        allowNull: true,
-    },
     newClub: {
         type: Sequelize.STRING,
         allowNull: false,

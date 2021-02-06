@@ -26,7 +26,8 @@ exports.createAthlete = (data) => {
         lastName: data.lastName,
         email: data.email,
         phoneNumber: data.phoneNumber,
-        birthDate: data.birthDate
+        birthDate: data.birthDate,
+        currentClub: data.currentClub
     });
 };
 

@@ -1,4 +1,5 @@
 const AthleteRepository = require('../repository/sequelize/AthleteRepository');
+const TrasnferRepository = require('../repository/sequelize/TrasnferRepository');
 
 exports.getAthletes = (req, res, next) => {
     AthleteRepository.getAthletes()
@@ -65,4 +66,15 @@ exports.deleteAthlete = (req, res, next) => {
             next(err);
         });
 };
+
+exports.getAthleteTransferHistory = (req, res, next) => {
+    const athleteId = req.params.athleteId;
+    TrasnferRepository.getTransfersByAthleteId(athleteId)
+        .then(transfers => {
+            res.status(200).json(transfers);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}
 

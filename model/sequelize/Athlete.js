@@ -30,6 +30,10 @@ const Athlete = sequelize.define('Athlete', {
         type: Sequelize.DATE,
         allowNull: true,
         unique: false
+    },
+    currentClub: {
+        type: Sequelize.STRING,
+        allowNull: true,
     }
 });
 
