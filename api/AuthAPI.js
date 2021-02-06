@@ -12,7 +12,10 @@ exports.login = (req, res, next) => {
                 err.code = 400;
                 throw err;
             } else if (authUtil.comparePasswords(password, manager.password) === true) {
-                const token = jwt.sign({userID: manager._id}, '3lQlhbogjkf47exA2u8JuIMYiSgX11hl', {expiresIn: '2h'});
+                const token = jwt.sign({
+                    userID: manager._id,
+                    username: manager.firstName + ' ' + manager.lastName
+                }, '3lQlhbogjkf47exA2u8JuIMYiSgX11hl', {expiresIn: '2h'});
                 res.send({token});
             } else {
                 const err = new Error("Niepoprawne hasło")
