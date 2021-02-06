@@ -1,6 +1,7 @@
 const Athlete = require("../../model/sequelize/Athlete");
 const Transfer = require("../../model/sequelize/Transfer");
 const Manager = require("../../model/sequelize/Manager");
+const authUtil = require("../../util/authUtil");
 
 exports.getManagers = () => {
     return Manager.findAll();
@@ -26,7 +27,8 @@ exports.createManager = (data) => {
         lastName: data.lastName,
         email: data.email,
         phoneNumber: data.phoneNumber,
-        careerStartDate: data.careerStartDate
+        careerStartDate: data.careerStartDate,
+        password: authUtil.hashPassword(data.password)
     });
 };
 

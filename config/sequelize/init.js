@@ -35,21 +35,24 @@ module.exports = () => {
                         lastName: 'Kowalski',
                         email: 'jan.kowalski@sport.com',
                         phoneNumber: 123456,
-                        birthDate: '1998-12-12'
+                        birthDate: '1998-12-12',
+                        currentClub: 'FC Barcelona'
                     },
                     {
                         firstName: 'Adam',
                         lastName: 'Zieliński',
                         email: 'adam.zielinski@football.com',
                         phoneNumber: 930213,
-                        birthDate: '1988-01-03'
+                        birthDate: '1988-01-03',
+                        currentClub: 'Juventus'
                     },
                     {
                         firstName: 'Marian',
                         lastName: 'Nowak',
                         email: 'marian.nowak@somesport.com',
                         phoneNumber: 1003203,
-                        birthDate: '1990-05-10'
+                        birthDate: '1990-05-10',
+                        currentClub: 'Amica Wronki'
                     },
                 ])
                     .then(() => {
@@ -108,7 +111,6 @@ module.exports = () => {
                     {
                         athlete_id: allAthletes[0]._id,
                         manager_id: allManagers[0]._id,
-                        currentClub: 'Juventus',
                         newClub: 'FC Bayern',
                         transferDate: '2020-11-15',
                         price: 100000,
@@ -120,7 +122,6 @@ module.exports = () => {
                     {
                         athlete_id: allAthletes[1]._id,
                         manager_id: allManagers[0]._id,
-                        currentClub: 'Legia Warszawa',
                         newClub: 'Liverpool',
                         transferDate: '2020-01-02',
                         price: 650000,
@@ -132,7 +133,6 @@ module.exports = () => {
                     {
                         athlete_id: allAthletes[2]._id,
                         manager_id: allManagers[1]._id,
-                        currentClub: 'FC Porto',
                         newClub: 'Athletic Bilbao',
                         transferDate: '2017-02-14',
                         price: 25000000,

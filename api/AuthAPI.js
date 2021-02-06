@@ -26,6 +26,15 @@ exports.login = (req, res, next) => {
 
 }
 
-exports.logout = (req, res, next) => {
-    req.session.loggedUser = undefined;
-}
+exports.register = (req, res, next) => {
+    ManagerRepository.createManager(req.body)
+        .then(newObj => {
+            res.status(201).json(newObj);
+        })
+        .catch(err => {
+            if (!err.statusCode) {
+                err.statusCode = 500;
+            }
+            next(err);
+        });
+};

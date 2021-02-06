@@ -1,7 +1,10 @@
+const authUtil = require("../util/authUtil");
+
 const TransferRepository = require('../repository/sequelize/TrasnferRepository');
 
 exports.getTransfers = (req, res, next) => {
-    TransferRepository.getTransfers()
+    const userIO = authUtil.decodeToken(req).userID;
+    TransferRepository.getTransfers(userIO)
         .then(transfers => {
             res.status(200).json(transfers);
         })

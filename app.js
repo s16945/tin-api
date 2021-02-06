@@ -31,4 +31,4 @@ app.use('/api/transfers', transferApiRouter);
 const authApiRouter = require('./routes/api/AuthApiRoute');
 app.use('/api/auth', authApiRouter);
 
-app.use(expressJwt({secret: '3lQlhbogjkf47exA2u8JuIMYiSgX11hl', algorithms: ['RS256']}).unless({path: ['/api/auth']}));
+app.use(expressJwt({secret: '3lQlhbogjkf47exA2u8JuIMYiSgX11hl', algorithms: ['HS256']}).unless({path: ['/api/auth']}));

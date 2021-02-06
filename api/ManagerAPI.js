@@ -12,7 +12,7 @@ exports.getManagers = (req, res, next) => {
 
 exports.getManagerById = (req, res, next) => {
     const managerId = req.params.managerId;
-    ManagerRepository.getmanagerById(managerId)
+    ManagerRepository.getManagerById(managerId)
         .then(manager => {
             if (!manager) {
                 res.status(404).json({
@@ -21,19 +21,6 @@ exports.getManagerById = (req, res, next) => {
             } else {
                 res.status(200).json(manager);
             }
-        });
-};
-
-exports.createManager = (req, res, next) => {
-    ManagerRepository.createManager(req.body)
-        .then(newObj => {
-            res.status(201).json(newObj);
-        })
-        .catch(err => {
-            if (!err.statusCode) {
-                err.statusCode = 500;
-            }
-            next(err);
         });
 };
 
